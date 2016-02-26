@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+<title>HML Web Servis</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<body>
+  <nav class="navbar navbar-default"> 
+    <div class="container-fluid"> 
+      <div class="navbar-header"> 
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false"> 
+          <span class="sr-only">Toggle navigation</span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+        </button> <a class="navbar-brand" href="#">Hrvatski Morfološki Leksikon</a> 
+      </div> 
+      <div class="collapse navbar-collapse" id="nav-collapse"> 
+        <ul class="nav navbar-nav">
+          <form class="navbar-form navbar-left" role="search"> 
+            <div class="form-group"> 
+              <input class="form-control"type="text" id="txtLemma" placeholder="lemma">
+              <input class="form-control"type="text" id="txtToken" placeholder="token">
+              <input class="form-control"type="text" id="txtMsd" placeholder="msd">
+              <input class="form-control"type="text" id="txtLemmasTokens" placeholder="lemmas||tokens">
+            </div>                 
+            <div class="radio">
+              <label id="lblLemma" style="padding-left: 10px; padding-right: 10px;"><input type="radio" id="rbLemma" name="grupa1" value="lemma"> lemma</label>
+              <label id="lblToken" style="padding-left: 10px; padding-right: 10px;"><input type="radio" id="rbToken" name="grupa1" value="token"> token</label>
+            </div> 
+            <div class="checkbox">
+              <input type="checkbox" id="chkGroup" value=""><label id="lblGroup" style="padding-left:2px; padding-right:20px;">Grupiranje</label>
+            </div>
+            <button type="button" id="btnPrvi" class="btn btn-default">Pretraži</button>
+            <button type="button" id="btnDrugi" class="btn btn-default">Pretraži</button>                            
+          </form>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form pull-right" role="search">
+            <div class="btn-group">
+              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                Vrsta pretrage <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a  href="#" id="aPretragaPrva">Pretraga po trojkama</a></li>
+                <li><a href="#" id="aPretragaDruga">Pretraga po lemama/tokenima</a></li>
+              </ul>
+            </div>
+          </form> 
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <div class="container">
+    <div class="jumbotron">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='funkcije.js') }}"></script>
+</body>
+</html>
