@@ -83,7 +83,7 @@ U lokalnom okruženju datoteku baze podataka *hml.db* je moguće postaviti bilo 
 3. Stvaranje nove aplikacije (odabrati tip python3.3)
 4. Koristiti ovaj repozitorij kao početni kod
 5. Po uputama za postavljanje flask aplikacije [Flask Begginer's Guide](https://blog.openshift.com/beginners-guide-to-writing-flask-apps-on-openshift/) postaviti aplikaciju na openshift
-6. Datoteku baze podataka je potrebno postaviti u mapu *app-root/repo/data/ * na openshift aplikaciji. Te odkomentirati dio koda u *wsgi/hmldb.py*:
+6. Datoteku baze podataka je potrebno postaviti u mapu *app-root/repo/data/* na openshift aplikaciji. Te odkomentirati dio koda u *wsgi/hmldb.py*:
 `#self.conn=sqlite3.connect(os.path.join(os.environ.get('HOME'),'app-root/repo/data/'+dbname))`
 
 7. Isto tako u datoteci *wsgi/static/funkcije.js* potrebno je promijeniti vrijednost globalne varijable online iz *false* u *true*:
