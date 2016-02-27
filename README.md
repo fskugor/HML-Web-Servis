@@ -56,7 +56,7 @@ Servis za pretragu baze podataka HRVATSKOG MORFOLOŠKOG LEKSIKONA
 
 ### Preduvjeti
 1. Python 3.x
-2. Flask za Python3.x (u slučaju korištenja virtualenv nije potrebno instalirati)
+2. Flask za Python3.x 
 3.  Sqlite baza podataka [hml.db](https://drive.google.com/open?id=0B1kUXPROf-eWSzhHd293YjA1SzA)
 
 ### Postavljanje i pokretanje u lokalnom okruženju
